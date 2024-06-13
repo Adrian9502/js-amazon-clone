@@ -1,5 +1,3 @@
-const products = [{}];
-
 let productsHTML = "";
 
 products.forEach((product) => {
@@ -19,8 +17,8 @@ products.forEach((product) => {
     <div class="product-rating-container">
       <img
         class="product-rating-stars"
-        src="images/ratings/${product.rating.stars * 10}.png"
-      />
+        src="../images/ratings/rating-${product.rating.stars * 10}.png"
+      alt="${product.name}"/>
       <div class="product-rating-count link-primary">${
         product.rating.count
       }</div>
@@ -55,4 +53,4 @@ products.forEach((product) => {
   `;
 });
 
-document.querySelector("js-products-grid").innerHTML = productsHTML;
+document.querySelector(".js-products-grid").innerHTML = productsHTML;
