@@ -40,3 +40,5 @@ const productId = button.dataset.productId;
     }
 
 <!-- AFTER IN AMAZON. GO TO CHECK OUT PAGE -->
+
+## In checkout page. generate the html page by using deduplicating and fix radio button next by using id as a name. then make it interactive the delete link
