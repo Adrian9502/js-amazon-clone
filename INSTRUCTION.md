@@ -38,3 +38,5 @@ const productId = button.dataset.productId;
         quantity: 1,
       });
     }
+
+<!-- AFTER IN AMAZON. GO TO CHECK OUT PAGE -->
