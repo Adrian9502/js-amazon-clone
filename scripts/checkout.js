@@ -9,15 +9,19 @@ import { loadCart } from "../data/cart.js";
 async function loadPage() {
   // await = let us write async code like normal code
   // await = js will wait to complete the code of await before going to next line
-  await loadProductsFetch();
+  try {
+    await loadProductsFetch();
 
-  await new Promise((resolve) => {
-    loadCart(() => {
-      resolve();
+    await new Promise((resolve) => {
+      loadCart(() => {
+        resolve();
+      });
     });
-  });
-  renderOrderSummary();
-  renderPaymentSummary();
+    renderOrderSummary();
+    renderPaymentSummary();
+  } catch (error) {
+    console.error("Error: ", error);
+  }
 }
 // save the value 2 in value
 loadPage();
