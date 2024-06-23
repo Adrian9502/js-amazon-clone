@@ -2,20 +2,37 @@ import { renderOrderSummary } from "./checkout/orderSummary.js";
 import { renderPaymentSummary } from "./checkout/paymentSummary.js";
 import { loadProductsFetch } from "../data/products.js";
 import { loadCart } from "../data/cart.js";
-// import "../data/backend-practice.js";
 
-Promise.all([
-  // fetch return promise directly
-  loadProductsFetch(),
-  new Promise((resolve) => {
+// you can only use await when inside async function
+// return a promise
+// shortcut for new Promise
+async function loadPage() {
+  // await = let us write async code like normal code
+  // await = js will wait to complete the code of await before going to next line
+  await loadProductsFetch();
+
+  await new Promise((resolve) => {
     loadCart(() => {
       resolve();
     });
-  }),
-]).then(() => {
+  });
   renderOrderSummary();
   renderPaymentSummary();
-});
+}
+// save the value 2 in value
+loadPage();
+// Promise.all([
+//   // fetch return promise directly
+//   loadProductsFetch(),
+//   new Promise((resolve) => {
+//     loadCart(() => {
+//       resolve();
+//     });
+//   }),
+// ]).then(() => {
+//   renderOrderSummary();
+//   renderPaymentSummary();
+// });
 // new Promise((resolve) => {
 //   loadProducts(() => {
 //     // make it go to the next step (then)
