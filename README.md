@@ -1,10 +1,10 @@
-# js-amazon-clone
+# JavaScript Amazon Clone
 
-This project i created is from youtube tutorial.
+This project i've created is from youtube tutorial.
 
 Amazon Clone project with backend using fetch api
 
-this project different concept of javascript
+this project has different concept of javascript
 -fetch
 -async,await
 -promise
